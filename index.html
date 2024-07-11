@@ -15,8 +15,8 @@
       <div class="flex items-center">
         <h1 class="text-3xl text-white ml-4">Da's Groen Tuinonderhoud</h1>
       </div>
-      <nav>
-        <ul class="flex space-x-4 text-white">
+      <nav class="hidden md:flex space-x-4 text-white">
+        <ul class="flex space-x-4">
           <li><a href="#home" class="hover:text-green-300">Home</a></li>
           <li><a href="#services" class="hover:text-green-300">Diensten</a></li>
           <li><a href="#pricing" class="hover:text-green-300">Prijzen</a></li>
@@ -24,7 +24,32 @@
           <li><a href="#contact" class="hover:text-green-300">Contact</a></li>
         </ul>
       </nav>
+      <button id="menu-button" class="md:hidden text-white focus:outline-none">
+        <svg
+          class="h-8 w-8"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+      </button>
     </header>
+    <nav id="mobile-menu" class="hidden md:hidden bg-green-700 text-white">
+      <ul class="flex flex-col space-y-2 p-4">
+        <li><a href="#home" class="hover:text-green-300">Home</a></li>
+        <li><a href="#services" class="hover:text-green-300">Diensten</a></li>
+        <li><a href="#pricing" class="hover:text-green-300">Prijzen</a></li>
+        <li><a href="#about" class="hover:text-green-300">Over Ons</a></li>
+        <li><a href="#contact" class="hover:text-green-300">Contact</a></li>
+      </ul>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="bg-green-100 p-12 text-center">
@@ -230,4 +255,17 @@
       <p>&copy; 2024 Da's Groen Tuinonderhoud. Alle rechten voorbehouden.</p>
     </footer>
   </body>
+
+  <script>
+    document
+      .getElementById("menu-button")
+      .addEventListener("click", function () {
+        var menu = document.getElementById("mobile-menu");
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+        } else {
+          menu.classList.add("hidden");
+        }
+      });
+  </script>
 </html>
